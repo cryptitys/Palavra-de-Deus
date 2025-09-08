@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Perdão - Palavra de Jesus Cristo</title>
+    <style>
+        /* Variáveis de cores e fontes */
+        :root {
+            --color-primary: #4a86c4;
+            --color-secondary: #d4af37;
+            --color-accent: #8a2a21;
+            --color-light: #f8f9fa;
+            --color-dark: #343a40;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Lora', Georgia, serif;
+            --font-script: 'Dancing Script', cursive;
+        }
+
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Container principal */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #6ba5e0 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            margin-top: 1.5rem;
+            border-radius: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Conteúdo principal */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            border-radius: 3px;
+        }
+
+        /* Conteúdo do artigo */
+        .article-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+        }
+
+        .forgiveness-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto 2rem;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:%234a86c4;stop-opacity:1" /><stop offset="100%" style="stop-color:%231a4a84;stop-opacity:1" /></radialGradient></defs><rect width="600" height="400" fill="url(%23grad)" /><circle cx="300" cy="200" r="120" fill="none" stroke="%23d4af37" stroke-width="4" opacity="0.6" /><path d="M250,150 Q300,100 350,150 Q400,200 350,250 Q300,300 250,250 Q200,200 250,150 Z" fill="%23ffffff" opacity="0.3" /><circle cx="300" cy="200" r="60" fill="%23d4af37" opacity="0.2" /></svg>');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-family: var(--font-heading);
+            text-align: center;
+            padding: 20px;
+            background-size: cover;
+        }
+
+        .article-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .quote {
+            font-family: var(--font-script);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-secondary);
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+        }
+
+        .highlight {
+            background-color: rgba(74, 134, 196, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Versículos relacionados */
+        .related-verses {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        .verse-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .verse-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--color-dark);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .verse-reference {
+            font-size: 1rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* Benefícios do perdão */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* Vídeo do YouTube */
+        .video-container {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-title {
+            padding: 1.5rem;
+            background: var(--color-primary);
+            color: white;
+            margin: 0;
+            font-family: var(--font-heading);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background: linear-gradient(135deg, var(--color-dark) 0%, #2c3e50 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-nav {
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            .forgiveness-image {
+                height: 300px;
+            }
+            
+            .article-content, .related-verses {
+                padding: 1.5rem;
+            }
+            
+            .benefits-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Palavra de Jesus Cristo</h1>
+            <p class="subtitle">"Perdoa-nos as nossas dívidas, assim como nós perdoamos..." (Mateus 6:12)</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#versiculo">Versículo do Dia</a></li>
+                    <li><a href="index.html#ensinos">Ensinos</a></li>
+                    <li><a href="index.html#oracao">Pedido de Oração</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="article-content fade-in">
+            <h2 class="section-title">O Perdão segundo Jesus</h2>
+            
+            <div class="forgiveness-image">
+                <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 8px;">
+                    <i class="fas fa-dove" style="font-size: 3rem; margin-bottom: 15px; display: block;"></i>
+                    <h3 style="margin: 0; font-size: 1.8rem;">O Poder do Perdão</h3>
+                    <p style="margin: 10px 0 0; font-style: italic;">"Perdoai e sereis perdoados"</p>
+                </div>
+            </div>
+            
+            <p class="article-text">
+                O perdão é um dos ensinamentos mais fundamentais e transformadores de Jesus Cristo. Em Mateus 6:12, Jesus nos ensina a orar: 
+                <span class="highlight">"Perdoa-nos as nossas dívidas, assim como nós perdoamos aos nossos devedores"</span>. 
+                Esta passagem revela a profunda conexão entre receber o perdão de Deus e perdoar aqueles que nos ofenderam.
+            </p>
+            
+            <p class="article-text">
+                Jesus não apresentou o perdão como uma opção, mas como um mandamento essencial para a vida cristã. 
+                Em Mateus 18:21-22, Pedro perguntou: <span class="highlight">"Senhor, até quantas vezes pecará meu irmão contra mim, e eu lhe perdoarei? Até sete vezes?"</span>. 
+                Jesus respondeu: <span class="highlight">"Não te digo que até sete vezes, mas até setenta vezes sete"</span>, indicando que o perdão deve ser ilimitado.
+            </p>
+            
+            <div class="quote">
+                "Porque, se perdoardes aos homens as suas ofensas, também vosso Pai celestial vos perdoará a vós. Se, porém, não perdoardes aos homens as suas ofensas, também vosso Pai vos não perdoará as vossas ofensas." (Mateus 6:14-15)
+            </div>
+            
+            <h3 class="section-title">Os Benefícios do Perdão</h3>
+            
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Libertação Emocional</h4>
+                    <p>O perdão liberta do peso do ressentimento e da amargura, trazendo paz interior.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Cura Interior</h4>
+                    <p>Perdoar permite que feridas emocionais sejam curadas e transformadas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Restauração de Relacionamentos</h4>
+                    <p>O perdão abre portas para reconciliação e relacionamentos renovados.</p>
+                </div>
+            </div>
+            
+            <p class="article-text">
+                A Parábola do Servo Impiedoso (Mateus 18:23-35) ilustra dramaticamente a importância do perdão. 
+                Jesus conta a história de um servo que teve uma dívida enorme perdoada pelo rei, mas se recusou a perdoar 
+                uma dívida pequena de um companheiro servo. A lição é clara: <span class="highlight">como podemos esperar o perdão de Deus se nos recusamos a perdoar os outros?</span>
+            </p>
+            
+            <div class="video-container">
+                <div class="video-card">
+                    <h3 class="video-title">A Importância do Perdão</h3>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/6cA0-NTdU9E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="article-text">
+                Perdoar não significa aprovar o erro ou esquecer o que aconteceu. Significa liberar o direito de retaliação 
+                e confiar a justiça a Deus. Como escreveu Paulo: <span class="highlight">"Não vos vingueis a vós mesmos, amados, mas dai lugar à ira, porque está escrito: Minha é a vingança, eu recompensarei, diz o Senhor"</span> (Romanos 12:19).
+            </p>
+            
+            <h3 class="section-title">Como Praticar o Perdão</h3>
+            
+            <p class="article-text">
+                1. <strong>Reconheça a mágoa</strong>: Admita honestamente como você foi ferido.
+            </p>
+            
+            <p class="article-text">
+                2. <strong>Decida perdoar</strong>: O perdão é uma escolha, não um sentimento.
+            </p>
+            
+            <p class="article-text">
+                3. <strong>Libere o ressentimento</strong>: Entregue a mágoa a Deus em oração.
+            </p>
+            
+            <p class="article-text">
+                4. <strong>Busque reconciliação</strong>: Quando possível, restaure o relacionamento.
+            </p>
+            
+            <p class="article-text">
+                5. <strong>Lembre-se do perdão de Deus</strong>: Medite em como Cristo nos perdoou.
+            </p>
+            
+            <div class="btn-container">
+                <a href="index.html" class="btn">Voltar à Página Principal</a>
+            </div>
+        </section>
+
+        <section class="related-verses fade-in">
+            <h2 class="section-title">Versículos sobre o Perdão</h2>
+            
+            <div class="verse-item">
+                <p class="verse-text" id="verse1">Carregando versículo...</p>
+                <p class="verse-reference" id="verse1-ref"></p>
+            </div>
+            
+            <div class="verse-item">
+                <p class="verse-text" id="verse2">Carregando versículo...</p>
+                <p class="verse-reference" id="verse2-ref"></p>
+            </div>
+            
+            <div class="verse-item">
+                <p class="verse-text" id="verse3">Carregando versículo...</p>
+                <p class="verse-reference" id="verse3-ref"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Palavra de Jesus Cristo</div>
+            <nav class="footer-nav">
+                <a href="index.html">Início</a>
+                <a href="index.html#versiculo">Versículo do Dia</a>
+                <a href="index.html#ensinos">Ensinos</a>
+                <a href="index.html#oracao">Oração</a>
+                <a href="index.html#sobre">Sobre</a>
+            </nav>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Palavra de Jesus Cristo. Todos os direitos reservados.</p>
+                <p>Site inspirado no exemplo de Carlos Acutis</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Versículos relacionados ao perdão
+            const forgivenessVerses = [
+                { reference: "Mateus 6:14-15", url: "https://bible-api.com/matthew+6:14-15?translation=almeida" },
+                { reference: "Colossenses 3:13", url: "https://bible-api.com/colossians+3:13?translation=almeida" },
+                { reference: "Efésios 4:32", url: "https://bible-api.com/ephesians+4:32?translation=almeida" },
+                { reference: "Lucas 6:37", url: "https://bible-api.com/luke+6:37?translation=almeida" },
+                { reference: "Marcos 11:25", url: "https://bible-api.com/mark+11:25?translation=almeida" },
+                { reference: "Lucas 17:3-4", url: "https://bible-api.com/luke+17:3-4?translation=almeida" },
+                { reference: "2 Coríntios 2:7-8", url: "https://bible-api.com/2+corinthians+2:7-8?translation=almeida" },
+                { reference: "1 João 1:9", url: "https://bible-api.com/1+john+1:9?translation=almeida" },
+                { reference: "Mateus 18:21-22", url: "https://bible-api.com/matthew+18:21-22?translation=almeida" },
+                { reference: "Salmo 103:12", url: "https://bible-api.com/psalms+103:12?translation=almeida" }
+            ];
+
+            // Função para buscar versículos da API
+            async function fetchVerse(verseUrl, elementId, refElementId) {
+                try {
+                    const response = await fetch(verseUrl);
+                    const data = await response.json();
+                    
+                    document.getElementById(elementId).textContent = `"${data.text}"`;
+                    document.getElementById(refElementId).textContent = data.reference;
+                } catch (error) {
+                    console.error('Erro ao buscar versículo:', error);
+                    document.getElementById(elementId).textContent = '"Antes, sede uns para com os outros benignos, misericordiosos, perdoando-vos uns aos outros, como também Deus vos perdoou em Cristo."';
+                    document.getElementById(refElementId).textContent = "Efésios 4:32";
+                }
+            }
+
+            // Buscar 3 versículos aleatórios
+            function getRandomVerses() {
+                const randomIndices = [];
+                while (randomIndices.length < 3) {
+                    const randomIndex = Math.floor(Math.random() * forgivenessVerses.length);
+                    if (!randomIndices.includes(randomIndex)) {
+                        randomIndices.push(randomIndex);
+                    }
+                }
+                return randomIndices.map(index => forgivenessVerses[index]);
+            }
+
+            // Exibir versículos aleatórios
+            const randomVerses = getRandomVerses();
+            
+            fetchVerse(randomVerses[0].url, 'verse1', 'verse1-ref');
+            fetchVerse(randomVerses[1].url, 'verse2', 'verse2-ref');
+            fetchVerse(randomVerses[2].url, 'verse3', 'verse3-ref');
+        });
+    </script>
+</body>
+  </html>
