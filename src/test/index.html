@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Discipulado - Palavra de Jesus Cristo</title>
+    <style>
+        :root {
+            --color-primary: #4a86c4;
+            --color-secondary: #d4af37;
+            --color-accent: #8a2a21;
+            --color-light: #f8f9fa;
+            --color-dark: #343a40;
+            --color-success: #27ae60;
+            --font-heading: 'Georgia', serif;
+            --font-body: 'Arial', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: #f5f7f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2c5e8c 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .course-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .sidebar {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .modules-list {
+            list-style: none;
+        }
+        
+        .module-item {
+            padding: 15px;
+            border-left: 4px solid #e0e0e0;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .module-item:hover {
+            background-color: #f0f5ff;
+        }
+        
+        .module-item.active {
+            border-left-color: var(--color-primary);
+            background-color: #e6f0ff;
+            font-weight: bold;
+        }
+        
+        .module-item.completed {
+            border-left-color: var(--color-success);
+        }
+        
+        .module-item.completed::after {
+            content: " ✓";
+            color: var(--color-success);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--color-success);
+            width: 0%;
+            transition: width 0.5s;
+        }
+        
+        .content-area {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .lesson-content {
+            min-height: 400px;
+        }
+        
+        .lesson-title {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .lesson-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            margin-bottom: 20px;
+            background: #000;
+            border-radius: 8px;
+        }
+        
+        .lesson-text {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            list-style: none;
+        }
+        
+        .quiz-options li {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-options li:hover {
+            background: #f0f5ff;
+        }
+        
+        .quiz-options li.selected {
+            background: #e6f7ff;
+            border-color: var(--color-primary);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3a76b4;
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        
+        .btn-success {
+            background: var(--color-success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #219653;
+        }
+        
+        .completion-badge {
+            text-align: center;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .certificate-section {
+            text-align: center;
+            padding: 30px;
+            display: none;
+        }
+        
+        .certificate-preview {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            border: 20px solid #f0e6d2;
+            margin: 20px auto;
+            background: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        .certificate-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 36px;
+            color: #8a2a21;
+            margin-bottom: 30px;
+        }
+        
+        .certificate-text {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .certificate-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--color-dark);
+            margin: 20px 0;
+            padding: 10px 30px;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+        
+        .certificate-footer {
+            margin-top: 40px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 900px) {
+            .course-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Curso de Discipulado Cristão</h1>
+            <p class="subtitle">Uma jornada de transformação através dos ensinamentos de Jesus</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="course-container">
+            <div class="sidebar">
+                <h2>Módulos do Curso</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">Progresso: 0% completo</p>
+                
+                <ul class="modules-list">
+                    <li class="module-item active" data-module="1">Módulo 1: Fundamentos da Fé</li>
+                    <li class="module-item" data-module="2">Módulo 2: A Vida em Cristo</li>
+                    <li class="module-item" data-module="3">Módulo 3: Oração e Comunhão</li>
+                    <li class="module-item" data-module="4">Módulo 4: Estudo Bíblico</li>
+                    <li class="module-item" data-module="5">Módulo 5: Evangelismo e Testemunho</li>
+                    <li class="module-item" data-module="6">Módulo 6: Discipulado e Mentoria</li>
+                    <li class="module-item" data-module="7">Módulo 7: Vivendo em Comunidade</li>
+                    <li class="module-item" data-module="8">Módulo Final: Projeto Prático</li>
+                </ul>
+            </div>
+            
+            <div class="content-area">
+                <div class="lesson-content">
+                    <h2 class="lesson-title" id="currentLessonTitle">Módulo 1: Fundamentos da Fé</h2>
+                    
+                    <div id="lessonVideo" class="lesson-video">
+                        <!-- O vídeo será carregado aqui -->
+                    </div>
+                    
+                    <div id="lessonText" class="lesson-text">
+                        <p>Neste módulo inicial, exploraremos os alicerces da fé cristã. Você aprenderá sobre a pessoa de Jesus Cristo, a importância das Escrituras Sagradas e o plano de salvação que Deus preparou para a humanidade.</p>
+                        
+                        <h3>O que você vai aprender:</h3>
+                        <ul>
+                            <li>A divindade e humanidade de Jesus Cristo</li>
+                            <li>A autoridade e confiabilidade da Bíblia</li>
+                            <li>A natureza do pecado e a necessidade de salvação</li>
+                            <li>O significado da graça e da fé</li>
+                            <li>O papel do Espírito Santo na vida do crente</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="quizContainer" class="quiz-container" style="display: none;">
+                        <h3>Questionário</h3>
+                        <div class="quiz-question" id="quizQuestion"></div>
+                        <ul class="quiz-options" id="quizOptions"></ul>
+                        <button class="btn btn-primary" id="submitQuiz" style="display: none;">Enviar Respostas</button>
+                    </div>
+                    
+                    <div class="completion-badge" id="completionBadge">
+                        <h3>🎉 Parabéns!</h3>
+                        <p>Você completou este módulo com sucesso!</p>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-secondary" id="prevLesson">Anterior</button>
+                        <button class="btn btn-primary" id="nextLesson">Próxima Lição</button>
+                        <button class="btn btn-success" id="completeModule" style="display: none;">Completar Módulo</button>
+                    </div>
+                </div>
+                
+                <div class="certificate-section" id="certificateSection">
+                    <h2>Certificado de Conclusão</h2>
+                    <p>Parabéns por completar o Curso de Discipulado Cristão! Preencha seus dados abaixo para gerar seu certificado.</p>
+                    
+                    <div class="form-group">
+                        <label for="userName">Nome Completo</label>
+                        <input type="text" id="userName" placeholder="Digite seu nome completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="completionDate">Data de Conclusão</label>
+                        <input type="text" id="completionDate" placeholder="DD/MM/AAAA">
+                    </div>
+                    
+                    <button class="btn btn-success" id="generateCertificate">Gerar Certificado</button>
+                    
+                    <div class="certificate-preview" id="certificatePreview" style="display: none;">
+                        <div class="certificate-title">CERTIFICADO DE CONCLUSÃO</div>
+                        <div class="certificate-text">
+                            É com grande satisfação que certificamos que
+                        </div>
+                        <div class="certificate-name" id="certName">Seu Nome Aqui</div>
+                        <div class="certificate-text">
+                            completou com êxito o <strong>Curso de Discipulado Cristão</strong>,<br>
+                            totalizando 40 horas de estudo, em <span id="certDate">00/00/0000</span>.
+                        </div>
+                        <div class="certificate-footer">
+                            Para verificação, acesse: palavradejesus.com/certificados<br>
+                            Código: <span id="certCode">DISC-XXXX-XXXX</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="printCertificate" style="display: none; margin-top: 20px;">Imprimir Certificado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Estrutura do curso
+        const courseStructure = {
+            modules: [
+                {
+                    id: 1,
+                    title: "Fundamentos da Fé",
+                    completed: false,
+                    lessons: [
+                        {
+                            title: "Introdução ao Curso",
+                            videoId: "6cA0-NTdU9E",
+                            content: "Nesta lição introdutória, você entenderá a importância do discipulado cristão e como este curso irá transformar sua caminhada com Cristo."
+                        },
+                        {
+                            title: "Quem é Jesus Cristo?",
+                            videoId: "hlO3X95WXjA",
+                            content: "Explore a natureza divina e humana de Jesus, Seu ministério terreno e Seu papel como Salvador e Senhor."
+                        },
+                        {
+                            title: "A Autoridade da Bíblia",
+                            videoId: "2ZcH6bwWrBk",
+                            content: "Aprenda sobre a inspiração, inerrância e autoridade das Escrituras como fundamento da fé cristã."
+                        },
+                        {
+                            title: "Questionário do Módulo 1",
+                            isQuiz: true,
+                            questions: [
+                                {
+                                    question: "Jesus é:",
+                                    options: [
+                                        "Apenas um profeta importante",
+                                        "Apenas um homem bom",
+                                        "Deus encarnado, totalmente Deus e totalmente homem",
+                                        "Um anjo enviado por Deus"
+                                    ],
+                                    correct: 2
+                                },
+                                {
+                                    question: "A Bíblia é:",
+                                    options: [
+                                        "Apenas um livro histórico",
+                                        "Um livro de mitos e lendas",
+                                        "Inspirada por Deus e útil para o ensino",
+                                        "Apenas o Antigo Testamento é importante"
+                                    ],
+                                    correct: 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "A Vida em Cristo",
+                    completed: false,
+                    lessons: [
+                        {
+                            title: "A Nova Vida em Cristo",
+                            videoId: "5VWEsV5fRqY",
+                            content: "Entenda o que significa nascer de novo e viver como uma nova criatura em Cristo Jesus."
+                        },
+                        {
+                            title: "Fruto do Espírito",
+                            videoId: "7Y3V2HhF0v4",
+                            content: "Aprenda sobre a obra do Espírito Santo na transformação do caráter do crente."
+                        }
+                    ]
+                },
+                // Outros módulos seriam definidos aqui...
+                {
+                    id: 8,
+                    title: "Projeto Prático",
+                    completed: false,
+                    lessons: [
+                        {
+                            title: "Projeto Final",
+                            videoId: "8tM6CuhkRqE",
+                            content: "Aplicação prática de tudo que foi aprendido durante o curso."
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // Variáveis de estado
+        let currentModule = 0;
+        let currentLesson = 0;
+        let userProgress = {};
+        let quizAnswers = {};
+
+        // Elementos do DOM
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const moduleItems = document.querySelectorAll('.module-item');
+        const lessonTitle = document.getElementById('currentLessonTitle');
+        const lessonVideo = document.getElementById('lessonVideo');
+        const lessonText = document.getElementById('lessonText');
+        const quizContainer = document.getElementById('quizContainer');
+        const quizQuestion = document.getElementById('quizQuestion');
+        const quizOptions = document.getElementById('quizOptions');
+        const submitQuiz = document.getElementById('submitQuiz');
+        const completionBadge = document.getElementById('completionBadge');
+        const prevLessonBtn = document.getElementById('prevLesson');
+        const nextLessonBtn = document.getElementById('nextLesson');
+        const completeModuleBtn = document.getElementById('completeModule');
+        const certificateSection = document.getElementById('certificateSection');
+        const certificatePreview = document.getElementById('certificatePreview');
+        const generateCertificateBtn = document.getElementById('generateCertificate');
+        const printCertificateBtn = document.getElementById('printCertificate');
+        const certName = document.getElementById('certName');
+        const certDate = document.getElementById('certDate');
+        const certCode = document.getElementById('certCode');
+
+        // Inicialização
+        function initCourse() {
+            // Carregar progresso do localStorage
+            const savedProgress = localStorage.getItem('discipuladoProgress');
+            if (savedProgress) {
+                userProgress = JSON.parse(savedProgress);
+                
+                // Marcar módulos completos
+                courseStructure.modules.forEach((module, index) => {
+                    if (userProgress[`module-${module.id}`]) {
+                        module.completed = true;
+                        moduleItems[index].classList.add('completed');
+                    }
+                });
+                
+                updateProgressBar();
+            }
+            
+            loadLesson(0, 0);
+            setupEventListeners();
+        }
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            // Navegação entre módulos
+            moduleItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentModule = index;
+                    currentLesson = 0;
+                    loadLesson(currentModule, currentLesson);
+                    updateActiveModule();
+                });
+            });
+            
+            // Botões de navegação
+            prevLessonBtn.addEventListener('click', goToPreviousLesson);
+            nextLessonBtn.addEventListener('click', goToNextLesson);
+            completeModuleBtn.addEventListener('click', completeCurrentModule);
+            
+            // Certificado
+            generateCertificateBtn.addEventListener('click', generateCertificate);
+            printCertificateBtn.addEventListener('click', () => window.print());
+        }
+
+        // Carregar lição
+        function loadLesson(moduleIndex, lessonIndex) {
+            const module = courseStructure.modules[moduleIndex];
+            const lesson = module.lessons[lessonIndex];
+            
+            // Atualizar UI
+            lessonTitle.textContent = `${module.title} - ${lesson.title}`;
+            
+            // Se for um vídeo
+            if (lesson.videoId) {
+                lessonVideo.innerHTML = `
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${lesson.videoId}" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                `;
+                lessonVideo.style.display = 'block';
+            } else {
+                lessonVideo.style.display = 'none';
+            }
+            
+            // Se for conteúdo textual
+            if (lesson.content) {
+                lessonText.innerHTML = lesson.content;
+                lessonText.style.display = 'block';
+            } else {
+                lessonText.style.display = 'none';
+            }
+            
+            // Se for questionário
+            if (lesson.isQuiz) {
+                loadQuiz(lesson.questions);
+                quizContainer.style.display = 'block';
+            } else {
+                quizContainer.style.display = 'none';
+            }
+            
+            // Ocultar badge de conclusão
+            completionBadge.style.display = 'none';
+            
+            // Atualizar botões de navegação
+            updateNavigationButtons();
+            
+            // Atualizar módulo ativo
+            updateActiveModule();
+        }
+
+        // Carregar questionário
+        function loadQuiz(questions) {
+            // Implementação do questionário
+            quizAnswers = {};
+            
+            // Para simplificar, vamos mostrar apenas a primeira questão
+            const question = questions[0];
+            quizQuestion.textContent = question.question;
+            
+            // Limpar opções anteriores
+            quizOptions.innerHTML = '';
+            
+            // Adicionar novas opções
+            question.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.dataset.index = index;
+                li.addEventListener('click', () => {
+                    // Desselecionar todas as opções
+                    document.querySelectorAll('#quizOptions li').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                    
+                    // Selecionar esta opção
+                    li.classList.add('selected');
+                    quizAnswers[0] = index;
+                    
+                    // Mostrar botão de enviar
+                    submitQuiz.style.display = 'block';
+                });
+                
+                quizOptions.appendChild(li);
+            });
+            
+            // Configurar botão de enviar
+            submitQuiz.onclick = () => {
+                if (quizAnswers[0] === question.correct) {
+                    alert('Resposta correta! Parabéns!');
+                    completeCurrentLesson();
+                } else {
+                    alert('Resposta incorreta. Tente novamente.');
+                }
+            };
+            
+            submitQuiz.style.display = 'none';
+        }
+
+        // Navegar para a próxima lição
+        function goToNextLesson() {
+            const module = courseStructure.modules[currentModule];
+            
+            if (currentLesson < module.lessons.length - 1) {
+                currentLesson++;
+                loadLesson(currentModule, currentLesson);
+            } else if (currentModule < courseStructure.modules.length - 1) {
+                currentModule++;
+                currentLesson = 0;
+                loadLesson(currentModule, currentLesson);
+            } else {
+                // Curso completo - mostrar seção de certificado
+                showCertificateSection();
+            }
+        }
+
+        // Navegar para a lição anterior
+        function goToPreviousLesson() {
+            if (currentLesson > 0) {
+                currentLesson--;
+                loadLesson(currentModule, currentLesson);
+            } else if (currentModule > 0) {
+                currentModule--;
+                const module = courseStructure.modules[currentModule];
+                currentLesson = module.lessons.length - 1;
+                loadLesson(currentModule, currentLesson);
+            }
+        }
+
+        // Atualizar botões de navegação
+        function updateNavigationButtons() {
+            const module = courseStructure.modules[currentModule];
+            const isLastLesson = currentLesson === module.lessons.length - 1;
+            const isLastModule = currentModule === courseStructure.modules.length - 1;
+            
+            // Botão anterior
+            prevLessonBtn.style.display = (currentModule === 0 && currentLesson === 0) ? 'none' : 'block';
+            
+            // Botão próximo
+            if (isLastLesson && isLastModule) {
+                nextLessonBtn.style.display = 'none';
+                completeModuleBtn.style.display = 'block';
+            } else {
+                nextLessonBtn.style.display = 'block';
+                completeModuleBtn.style.display = 'none';
+            }
+        }
+
+        // Completar lição atual
+        function completeCurrentLesson() {
+            // Implementar lógica de conclusão de lição
+            completionBadge.style.display = 'block';
+            
+            // Em um sistema real, salvaríamos o progresso
+            setTimeout(() => {
+                goToNextLesson();
+            }, 2000);
+        }
+
+        // Completar módulo atual
+        function completeCurrentModule() {
+            const module = courseStructure.modules[currentModule];
+            module.completed = true;
+            
+            // Salvar no progresso do usuário
+            userProgress[`module-${module.id}`] = true;
+            localStorage.setItem('discipuladoProgress', JSON.stringify(userProgress));
+            
+            // Atualizar UI
+            moduleItems[currentModule].classList.add('completed');
+            updateProgressBar();
+            
+            // Avançar para o próximo módulo ou finalizar
+            if (currentModule < courseStructure.modules.length - 1) {
+                currentModule++;
+                currentLesson = 0;
+                loadLesson(currentModule, currentLesson);
+            } else {
+                showCertificateSection();
+            }
+        }
+
+        // Mostrar seção de certificado
+        function showCertificateSection() {
+            document.querySelector('.lesson-content').style.display = 'none';
+            certificateSection.style.display = 'block';
+        }
+
+        // Gerar certificado
+        function generateCertificate() {
+            const name = document.getElementById('userName').value;
+            const date = document.getElementById('completionDate').value;
+            
+            if (!name || !date) {
+                alert('Por favor, preencha todos os campos');
+                return;
+            }
+            
+            // Gerar código único
+            const code = 'DISC-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            
+            // Atualizar certificado
+            certName.textContent = name;
+            certDate.textContent = date;
+            certCode.textContent = code;
+            
+            // Mostrar preview
+            certificatePreview.style.display = 'flex';
+            printCertificateBtn.style.display = 'block';
+            
+            // Salvar dados do certificado (em um sistema real)
+            const certificateData = {
+                name: name,
+                date: date,
+                code: code,
+                course: "Curso de Discipulado Cristão",
+                issued: new Date().toISOString()
+            };
+            
+            localStorage.setItem('lastCertificate', JSON.stringify(certificateData));
+        }
+
+        // Atualizar barra de progresso
+        function updateProgressBar() {
+            const totalModules = courseStructure.modules.length;
+            const completedModules = courseStructure.modules.filter(module => module.completed).length;
+            const progress = (completedModules / totalModules) * 100;
+            
+            progressFill.style.width = `${progress}%`;
+            progressText.textContent = `Progresso: ${Math.round(progress)}% completo`;
+        }
+
+        // Atualizar módulo ativo na sidebar
+        function updateActiveModule() {
+            moduleItems.forEach((item, index) => {
+                if (index === currentModule) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Iniciar o curso quando a página carregar
+        window.addEventListener('DOMContentLoaded', initCourse);
+    </script>
+</body>
+  </html>
