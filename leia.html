@@ -249,7 +249,39 @@
             text-align: center;
             margin-top: 2rem;
         }
+         /*card youtu.be*/
+        .card-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin: 20px 0;
+}
 
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a4a84;
+}
+
+.card-video {
+    position: relative;
+    padding-bottom: 56.25%; /* proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
         /* Rodapé */
         footer {
             background: linear-gradient(135deg, var(--color-dark) 0%, #2c3e50 100%);
@@ -368,15 +400,7 @@
         <div class="container header-content">
             <h1>Palavra de Jesus Cristo</h1>
             <p class="subtitle">"Amem-se uns aos outros como eu os amei" (João 15:12)</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#versiculo">Versículo do Dia</a></li>
-                    <li><a href="index.html#ensinos">Ensinos</a></li>
-                    <li><a href="index.html#oracao">Pedido de Oração</a></li>
-                    <li><a href="index.html#sobre">Sobre</a></li>
-                </ul>
-            </nav>
+            
         </div>
     </header>
 
@@ -447,7 +471,21 @@
                 <a href="index.html" class="btn">Voltar à Página Principal</a>
             </div>
         </section>
-
+           <section
+               <div class="card-content">
+    <h3 class="card-title">Assista ao vídeo</h3>
+    <div class="card-video">
+        <iframe 
+            src="https://youtu.be/iclstt91DdQ?si=_p_TgtCEAJptoBL8" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <p class="card-text">Um vídeo especial para fortalecer sua fé e reflexão.</p>
+           </div>
+           </section>
         <section class="related-verses fade-in">
             <h2 class="section-title">Versículos sobre o Amor ao Próximo</h2>
             
