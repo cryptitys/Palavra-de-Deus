@@ -34,6 +34,20 @@
                     reference: "Salmos 37:5"
                 }
             ];
+  //video//
+  const video = document.getElementById('meuVideo');
+
+  function voltar() {
+    video.currentTime -= 10;
+  }
+
+  function avancar() {
+    video.currentTime += 10;
+  }
+
+  function velocidade(v) {
+    video.playbackRate = v;
+  }
 
             // Selecionar um versículo aleatório
             function getRandomVerse() {
