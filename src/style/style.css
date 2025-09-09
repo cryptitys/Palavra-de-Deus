@@ -223,6 +223,40 @@
             background: var(--color-accent);
             transform: translateY(-2px);
         }
+         /*video*/
+ .video-container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .controls button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #1a4a84;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .controls button:hover {
+    background: #163a68;
+  }
 
         /* Galeria */
         .gallery {
