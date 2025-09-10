@@ -134,7 +134,35 @@
             background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
             border-radius: 3px;
         }
+        /*video mp4*/
+            .video-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  max-width: 400px;
+  margin: 20px;
+}
 
+.video-player {
+  width: 100%;
+  display: block;
+}
+
+.video-info {
+  padding: 15px;
+}
+
+.video-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.video-info p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95em;
+}
         /* Versículo do dia */
         .daily-verse {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
