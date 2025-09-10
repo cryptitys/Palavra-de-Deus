@@ -223,40 +223,7 @@
             background: var(--color-accent);
             transform: translateY(-2px);
         }
-         /*video*/
- .video-container {
-    max-width: 900px;
-    margin: 20px auto;
-    text-align: center;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  .controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .controls button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    background: #1a4a84;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-
-  .controls button:hover {
-    background: #163a68;
-  }
+         
 
         /* Galeria */
         .gallery {
@@ -383,8 +350,8 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
         }
-/*card youtu.be*/
-        .card-content {
+/* Card geral */
+.card-content {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
@@ -398,6 +365,7 @@
     color: #1a4a84;
 }
 
+/* Container do vídeo mantendo proporção 16:9 */
 .card-video {
     position: relative;
     padding-bottom: 56.25%; /* proporção 16:9 */
@@ -407,13 +375,13 @@
     margin-bottom: 15px;
 }
 
-.card-video iframe {
+/* Vídeo MP4 ocupa todo o container */
+.card-video video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
     border-radius: 10px;
 }
         /* Responsividade */
